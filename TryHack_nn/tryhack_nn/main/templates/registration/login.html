@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Journal App Login{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+{% include 'includes/title.html' %}
+{% endblock %}
+
+{% block content %}
+<div id="loginregister">
+    <div class="container">
+        <h1 class="text-center">Journal App</h1>
+        <p class="text-center fs-4">Your very own journal</p>
+    </div>
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p>Don't have an account yet? <a href="/register">Click here to register.</a></p>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+{% endblock %}

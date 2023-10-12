@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}My Entries{% endblock %}
+
+{% block navbar %}
+{% include 'includes/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">My Entries</h1>
+    {% for entry in entries %}
+        <div class="container mt-5 border-bottom border-primary">
+            <h2>{{ entry.title }}</h2>
+            <p>{{ entry.date }}</p>
+            <p>Feeling: {{ entry.mood }}</p>
+            <p>{{ entry.content }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
